@@ -1,0 +1,265 @@
+
+    <!DOCTYPE html>      
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservation</title>
+        <!-- <script type="text/javascript"></script> -->
+        <link rel="shortcut icon" type="image/png" href="../Brief3-ABOUMEJD/images/logocar.png">
+        <script></script>
+        <script src="agencedelocation.js"></script>
+        	<!-- main style -->
+          <link rel="stylesheet" href="res.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+        <body>
+            <nav class="navMenu">
+                <input type="checkbox" id="check" >
+                <label for="check">
+                  <i class="fas fa-bars" id="btn"></i>
+                  <i class="fas fa-times" id="cancel"></i>
+                </label>
+                <!--   -->
+                <ul>
+                  <li><a href="agencedelocation.html">Home</a></li>
+                  <li></li><a href="Resirvation.html">Reservation</a></li>
+                  <li></li><a href="Galerie.html">Galerie</a></li>
+                  <li></li><a href="contact.html">contact</a></li>
+                </ul>
+                </nav>
+<div class="panel-container">
+	<div class="screen-body-item">
+        <div class="app-form">
+          <div class="app-form-group">
+            <h2>Resirvation</h2>
+            <form name="formulaire">
+            <select name="véhicule" id="select1"  class="app-form-control" >
+                <option>vehicle choice</option>
+                <option>motorcycle</option>
+                <option>compact</option>
+                <option>citadin</option>
+                <option>utility</option>
+                <option>berlin</option>
+                <option>truck</option>
+                <option>construction machine</option>
+            </select>
+         
+          <div class="app-form-group">
+            <select name="carburant" id="select2" class="app-form-control">
+                <option>select a fuel</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+            </select>
+          </div>
+          <div class="app-form-group">
+            <select name="boiteDeVitess" id="select3"  class="app-form-control">
+                <option>select the Gearbox</option>
+                <option></option>
+            </select>
+          </div>
+          <div class="app-form-group">
+            <input type="number" class="app-form-control" placeholder="0" id="day">
+          </div>
+          
+          <div class="app-form-group buttons">
+           
+            <input type="button" class="app-form-button" id="Calculated" onclick="ouvrir()" value="Calculated"/>
+            
+          </div>
+      
+        </form>
+      </div>
+        </div>
+</div> 
+
+<div id="alertcontainer">
+  <div id="alert">
+   <p id="spanalert"><!--pour afficher calcule dan alert--></p>
+    <p onclick="ouvrir()">Ok</p>
+  </div>
+</div>
+    
+<script>
+ // script alert //
+  function ouvrir(){
+   var a=document.getElementById("alertcontainer");
+   if(a.style.display==="none"){
+     a.style.display="block";
+   }else{
+     a.style.display="none";
+   }
+  }
+ 
+   // script alert //
+  //had fonction katraja3 lina les opltion khawyin
+      function remove_carburant() {
+          for (let i = 1; i < formulaire.carburant.length; i++) {
+              formulaire.carburant.options[i].innerText = '';
+          }
+      }
+      let boiteDeVitess;
+      formulaire.véhicule.addEventListener('change', function () {
+          let index = formulaire.véhicule.selectedIndex;
+        //   console.log("index est :"+index);
+          let carburant;
+          // choose what is index of véhicule
+          switch (index) {
+              case 0:
+                  remove_carburant();
+                  break;
+              case 1:
+                  remove_carburant();
+                  carburant = ['Electrique', 'Essence'];
+                  boiteDeVitess = 'none';
+                  break;
+              case 2:
+                  remove_carburant();
+                  carburant = ['Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 3:
+                  remove_carburant();
+                  carburant = ['Electrique', 'Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 4:
+                  remove_carburant();
+                  carburant = ['Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 5:
+                  remove_carburant();
+                  carburant = ['Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Automatique';
+                  break;
+              case 6:
+                  remove_carburant();
+                  carburant = ['Diesel'];
+                  boiteDeVitess = 'Automatique';
+                  break;
+              case 7:
+                  remove_carburant();
+                  carburant = ['Diesel', 'Essence'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+          }
+  
+          // fill carburant and boiteDeVitess
+          for (let i = 0; i < carburant.length; i++) {
+              formulaire.carburant.options[i + 1].innerText = carburant[i];
+          }
+          formulaire.boiteDeVitess.options[1].innerText = boiteDeVitess;
+  
+  
+      });
+     console.log(document.querySelector("#Calculated").innerHTML );
+      // document.querySelector("body > form > div:nth-child(5) > botton").addEventListener('click', function () {
+          document.querySelector("#Calculated").addEventListener('click', function () {
+          // get value of select tags
+          console.log( document.querySelector(".app-form-button").value);
+          let cars = document.querySelector("#select1").value;
+          let carcarburant = document.querySelector("#select2").value;
+          let day = document.querySelector("#day").value;
+          let price;
+          console.log(cars);
+          console.log(carcarburant);
+          console.log(boiteDeVitess);
+  
+          // calcule boite de vittes none de moto
+          if (boiteDeVitess == 'none') {
+              if (cars == 'moto') {
+                  if (carcarburant == 'Electrique') {
+                      price = (10 * 0.05) + 10;
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = (10 * 0.14) + 10;
+                  }
+              }
+          }
+          // calcule boite de vittes auto
+          if (boiteDeVitess == 'Automatique') {
+              // calcule berlin
+              if (cars == 'berlin') {
+                  if (carcarburant == 'Hybirde') {
+                      price = ((20 * 0.19) + (20 * 0.09)) + 20;
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = ((20 * 0.19) + (20 * 0.14)) + 20;
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = ((20 * 0.19) + (20 * 0.21)) + 20;
+                  }
+              }
+              // calcule camion
+              if (cars == 'camion') {
+                  if (carcarburant == 'Diesel') {
+                      price = ((250 * 0.19) + (250 * 0.21)) + 250;
+                  }
+              }
+          }
+          // calcule boite de vittes manuelle
+          if (boiteDeVitess == 'Manuelle') {
+              // calcule compact
+              if (cars == 'compact') {
+                  if (carcarburant == 'Hybirde') {
+                      price = 14 + (14 * 0.09);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 14 + (14 * 0.14);
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = 14 + (14 * 0.21);
+                  }
+              }
+              // calcule citadin
+              if (cars == 'citadin') {
+                  if (carcarburant == 'Hybirde') {
+                      price = 12 + (12 * 0.09);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 12 + (12 * 0.14);
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = 12 + (12 * 0.21);
+                  }
+                  if (carcarburant == 'Electrique') {
+                      price = 12 + (12 * 0.05);
+                  }
+              }
+              // calcule utilitaire
+              if (cars == 'utilitaire') {
+                  if (carcarburant == 'Diesel') {
+                      price = 16 + (16 * 0.21);
+                  }
+              }
+              // calcule engin de chantier
+              if (cars == 'engin de chantier') {
+                  if (carcarburant == 'Diesel') {
+                      price = 900 + (900 * 0.21);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 900 + (900 * 0.14);
+                  }
+              }
+          }
+          //    alert(day);
+          // console.log(day);
+          // console.log(price);
+          price = price * day;
+          console.log(price);
+        //  alert(price);
+        
+        document.getElementById("spanalert").innerHTML ="your sum is \n" + price+" $";
+  
+      });
+  </script>
+ <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<script src="agencedelocation.js"></script>
+</body>
+</html>

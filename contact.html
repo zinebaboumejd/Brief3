@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UUTF-8"/>
+        <title>Contact</title>
+        <!-- <script type="text/javascript"></script> -->
+        <script></script>
+        <script src="agencedelocation.js"></script>
+        <link rel="shortcut icon" type="image/png" href="../Brief3-ABOUMEJD/images/logocar.png">
+        	<!-- main style -->
+          <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  </head>
+        <body>
+          
+          <div class="background">
+            <nav class="navMenu">
+              <input type="checkbox" id="check" >
+              <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+              </label>
+              <!--   -->
+              <ul>
+                <li><a href="agencedelocation.html">Home</a></li>
+                <li></li><a href="Resirvation.html">Reservation</a></li>
+                <li></li><a href="Galerie.html">Galerie</a></li>
+                <li></li><a href="contact.html">contact</a></li>
+              </ul>
+              </nav>
+            <div class="container">
+              
+              <div class="screen">
+                <div class="screen-header">
+                  <div class="screen-header-left">
+                    <div class="screen-header-button close"></div>
+                    <div class="screen-header-button maximize"></div>
+                    <div class="screen-header-button minimize"></div>
+                  </div>
+                  <div class="screen-header-right">
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                  </div>
+                </div>
+                <div class="screen-body">
+                  <div class="screen-body-item left">
+                    <div class="app-title">
+                      <span >CONTACT</span>
+                      <span>US</span>
+                    </div>
+                    <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+                  </div>
+                  <div class="screen-body-item">
+                    <form name="form1">
+                    <div class="app-form">
+                      <div class="app-form-group">
+                        <input class="app-form-control" name="namem" id="name" placeholder="NAME" value="">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" name="email" id="email" placeholder="EMAIL">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" name="contactno"  id="contact-no" placeholder="CONTACT NO">
+                      </div>
+                      <div class="app-form-group message">
+                        <input class="app-form-control" name="message" placeholder="MESSAGE" >
+                      </div>
+                      <div class="app-form-group buttons">
+                        <button class="app-form-button" onclick="">CANCEL</button>
+                        <button class="app-form-button" onclick="test()">SEND</button>
+                      </div>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+           <!-- ****footer**** -->
+           <footer>  
+            <div class="contact">
+        </div>
+        <footer class="footer-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-3 item">
+                <h3>About</h3>
+                <p>Passez vos commandes en ligne de nos voitures et de nos minibus. Nous vous livrons à votre demande, quand il vous plait, et nous sommes des professionnels de la réservation de voitures avec chauffeur</p>
+               </div>
+               <div class="col-sm-6 col-md-3 item">
+                  <h3>Nous trouver</h3>
+                  <p>Réserve tes voitures en ligne et récupère les clés au comptoir de location. C'est rapide, simple et sécurisé.</p>
+        
+                    <p>RC : 123342</p>
+                    <p>ID Fiscale : 85302384</p>
+                    <p>Patente : 643 024 82</p>
+                 </div>
+              <div class="col-md-6 item text">
+                <h3>Nous joindre</h3>
+                <p>contact@RentMeNow .ma<P>
+                <p>Tél. : +212 (0)6 34 54 24 95</p>
+               
+                <p>+212 (0)522 899 686</p>
+                <p>Fax. : +212 (0)546 303 041</p>
+              </div>
+              <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                    class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+                  href="#"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">RentMeNow  © 2021</p>
+          </div>
+        </footer>
+        <script>
+          function test(){
+            namem=document.form1.namem.value;
+            email=document.form1.email.value;
+            contact_no=document.form1.contactno.value;
+            message=document.form1.message.value;
+            if(document.form1.namem.value=="" || document.form1.email.value=="" || document.form1.contactno.value=="" || document.form1.message.value=="" ){
+             alert("remplire les champs");
+            }else{
+              alert("name:"+namem+"\nemail:"+email+"\ncontact no:"+contact_no+"\nmessage:"+message);
+            }
+
+
+        }
+       
+        </script>
+      <!-- ****footer**** -->
+            <script src="agencedelocation.js"></script>
+        </body>
+    </html>
+   
