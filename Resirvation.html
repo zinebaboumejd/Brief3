@@ -17,20 +17,28 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
         <body>
-            <nav class="navMenu">
-                <input type="checkbox" id="check" >
-                <label for="check">
-                  <i class="fas fa-bars" id="btn"></i>
-                  <i class="fas fa-times" id="cancel"></i>
-                </label>
-                <!--   -->
-                <ul>
-                  <li><a href="agencedelocation.html">Home</a></li>
-                  <li></li><a href="Resirvation.html">Reservation</a></li>
-                  <li></li><a href="Galerie.html">Galerie</a></li>
-                  <li></li><a href="contact.html">contact</a></li>
-                </ul>
-                </nav>
+            <header>
+                <div class="overlay">
+                  <nav>
+                   
+                    <input type="checkbox" id="check" >
+                    <label for="check" class="checkbtn">
+                      <i class="fas fa-bars" ></i>
+                    </label>
+                    <label class="logo"><img src="../Brief3-ABOUMEJD/images/car-logo-PNG1.png"> RentMeNow</label>
+                    <ul>
+                      <li><a href="agencedelocation.html">Home</a></li>
+                      <li><a href="Resirvation.html">Reservation</a></li>
+                      <li><a href="Galerie.html">Galerie</a></li>
+                      <li><a href="contact.html">contact</a></li>
+                    </ul>
+                  </nav>
+                  
+                   <br>
+                   
+                </div>
+                   
+            </header>
 <div class="panel-container">
 	<div class="screen-body-item">
         <div class="app-form">
@@ -50,7 +58,7 @@
          
           <div class="app-form-group">
             <select name="carburant" id="select2" class="app-form-control">
-                <option>select a fuel</option>
+                <option>choisir un carburant</option>
                 <option></option>
                 <option></option>
                 <option></option>
@@ -162,14 +170,14 @@
       // document.querySelector("body > form > div:nth-child(5) > botton").addEventListener('click', function () {
           document.querySelector("#Calculated").addEventListener('click', function () {
           // get value of select tags
-          console.log( document.querySelector(".app-form-button").value);
+   // console.log( document.querySelector(".app-form-button").value);
           let cars = document.querySelector("#select1").value;
           let carcarburant = document.querySelector("#select2").value;
           let day = document.querySelector("#day").value;
           let price;
-          console.log(cars);
-          console.log(carcarburant);
-          console.log(boiteDeVitess);
+        //   console.log(cars);
+        //   console.log(carcarburant);
+        //   console.log(boiteDeVitess);
   
           // calcule boite de vittes none de moto
           if (boiteDeVitess == 'none') {

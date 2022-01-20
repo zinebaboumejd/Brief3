@@ -9,109 +9,116 @@ body{
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  } */
+  } *
   
- /* nav */
-
-nav ul{
-  bottom: 100%;
-  float: right;
-  margin-right: 25px;
  
-
-}
-nav ul li{
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 15px;
-
-}
-nav ul li a {
-  color: white;
-  font-size: 18px;
-  padding: 5px 0;
-  text-transform: uppercase;
-}
-nav ul li a:before{
-  position:absolute;
-  content: '';
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 100px;
-  background: white;
-  transform: scale(0);
-  transform-origin: right;
-  transform:transform .4s linear ;
-}
-nav ul li :hover:before{
-  transform: scale(1);
-  transform-origin: left;
-}
-label{
-  position: relative;
-  bottom: 400%;
-}
-label #btn,
-label #cancel{
-  color:white;
-  font-size: 30px;
-  float: right;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-  
-}
-#check{
-  display: none;
-}
-
-@media (max-width:944px) {
-  label #btn{
-    display: none;
+/* nav */
+nav{
+  /* background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%); */
+  height: 80px;
+  }
+  label.logo{
+    color:white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
   }
   nav ul li a{
+    color: white;
     font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 3px;
   }
-
-}
-@media (max-width:860px) {
-  label #btn{
+  a.active,a:hover{
+    background-color: #ffcad8;
+    transition: .5s;
+    color: #000;
+    list-style: none;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    display: none;
+  }
+   #check{
+    display:none;
+  } 
+  @media (max-width:1040px) {
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+  font-size: 16px;
+    }
+  }
+  @media (max-width:942px) {
+  .checkbtn{
     display: block;
   }
   ul{
     position: fixed;
     width: 100%;
     height: 100vh;
-    top: 80px;
-    left: 0;
-    left: -100%;
+    background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+    top: 110px;
+    left:-950px;
     text-align: center;
-    transition:all .5s ;
+    transition:  all .5s;
+    z-index: 100;
+
   }
-  nav ul li{
+  nav ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
   }
   nav ul li a{
-    font-size: 12px;
+  font-size: 20px;
   }
-  #check:checked ~ ul{
-    left: 0%;
+  a:hover,a:active{
+    background: none;
+    color: #000;
   }
-#check:checked ~ label #btn{
-  display: none;
-}
-#check:checked ~ label #cancel{
- display: block;
-}
-.panel-container {
-  position: relative;
-top :20%;
-}
-}
-/* end nav */
+  #check:checked~ul{
+    left: 0;
+  }
+  }
+ 
+
+ 
+  
+  
+  /* end nav */
+  header {
+
+      width: 100%;
+      height: 300px;
+   
+      position: relative;
+    
+  }
+  header .overlay{
+      width: 100%;
+      height: 400px;
+      padding: 50px;
+      
+  }
   
   body, button, input {
     font-family: 'Montserrat', sans-serif;
@@ -129,6 +136,7 @@ top :20%;
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+    padding-bottom: 20%;
    
   }
   
@@ -136,6 +144,7 @@ top :20%;
     position: relative;
     background: #3e3e3e;
     border-radius: 15px;
+    bottom: 20%;
   }
   
   .screen:after {
@@ -457,4 +466,24 @@ top :20%;
     background-image: url("images/car-gb47b51dec_1920.jpg");
     background-position:top;
   }
+   /*mobil*/
+   @media (max-width:390px) {
+    label.logo {
+   
+      font-size: 16px;
+      display: flex;
+      flex-wrap: nowrap;
+    margin-left: 0;
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    }
+    .checkbtn {
+      /* display: block; */
+      position: relative;
+      bottom: 15px;
+  }
+    
+  }
+
   

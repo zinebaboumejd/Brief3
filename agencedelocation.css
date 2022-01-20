@@ -4,6 +4,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -15,107 +17,102 @@ h1{
   padding: 40PX;
   text-align: center;
   text-shadow: 2px 2px 8px #000000;
+  width: 100%;
 }
 /* nav */
-.h1heder{
-  position: relative;
-  left: 12%;
-  top: 38%;
-  font-size: 50PX;
-}
-nav ul{
-  float: right;
-  margin-right: 25px;
-  
-}
-nav ul li{
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 15px;
-
-}
-nav ul li a {
-  color: white;
-  font-size: 18px;
-  padding: 5px 0;
-  text-transform: uppercase;
-}
-nav ul li a:before{
-  position:absolute;
-  content: '';
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 100px;
-  background: white;
-  transform: scale(0);
-  transform-origin: right;
-  transform:transform .4s linear ;
-}
-nav ul li :hover:before{
-  transform: scale(1);
-  transform-origin: left;
-}
-label #btn,
-label #cancel{
-  color:white;
-  font-size: 30px;
-  float: right;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check{
-  display: none;
-}
-
-@media (max-width:944px) {
-  label #btn{
-    display: none;
+ nav{
+  /* background-image: 
+  ( 135deg, #9f05ff69 10%, #fd5e086b 100%); */
+  height: 80px;
+  }
+  label.logo{
+    color:white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
   }
   nav ul li a{
+    color: white;
     font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 3px;
   }
-
-}
-@media (max-width:860px) {
-  label #btn{
+  a.active,a:hover{
+    background-color: #ffcad8;
+    transition: .5s;
+    color: #000;
+    list-style: none;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    display: none;
+  }
+   #check{
+    display:none;
+  } 
+  @media (max-width:1040px) {
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+  font-size: 16px;
+    }
+  }
+  @media (max-width:942px) {
+  .checkbtn{
     display: block;
   }
   ul{
     position: fixed;
     width: 100%;
     height: 100vh;
-    top: 80px;
-    left: 0;
-    left: -100%;
+    background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+    top: 110px;
+    left:-950px;
     text-align: center;
-    transition:all .5s ;
+    transition:  all .5s;
   }
-  nav ul li{
+  nav ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
   }
   nav ul li a{
-    font-size: 12px;
+  font-size: 20px;
   }
-  #check:checked ~ ul{
-    left: 0%;
+  a:hover,a:active{
+    background: none;
+    color: #000;
   }
-#check:checked ~ label #btn{
-  display: none;
-}
-#check:checked ~ label #cancel{
- display: block;
-}
+  #check:checked~ul{
+    left: 0;
+  }
+  }
+  
+  
+  /* end nav */
 
-}
-/* end nav */
 header {
 	background:url('images/car-gb47b51dec_1920.jpg');
     background-attachment: fixed;
-	text-align: center;
+	/* text-align: center; */
 	width: 100%;
 	height: 800px;
 	background-size: cover;
@@ -692,3 +689,37 @@ li a:hover {
   color: white;
   text-shadow: none;
 } */
+ /*mobil*/
+ @media (max-width:390px) {
+  label.logo {
+ 
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+  margin-left: 0;
+  width: 20px;
+  height: 50px;
+  line-height: 50px;
+  }
+  .checkbtn {
+    /* display: block; */
+    position: relative;
+    bottom: 15px;
+}
+header {
+	height: 300px;
+  background:url('images/car-gb47b51dec_1920.jpg');
+
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  background-attachment:fixed ;
+}
+.sectionvideo{
+
+}
+video{
+  height: 200px;
+  width: 200px;
+margin-left: 25%;
+}
+}
